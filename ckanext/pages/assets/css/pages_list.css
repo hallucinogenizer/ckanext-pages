@@ -42,3 +42,19 @@ div.page-content {
     height: 5.8em !important;
     overflow: hidden !important;
 }
+
+.card-img-top {
+    width: 100% !important;
+    height: 15rem;
+    display: block;
+    background-size: cover;
+}
+
+#blog-search {
+    color: #999;
+    opacity: 1;
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+}

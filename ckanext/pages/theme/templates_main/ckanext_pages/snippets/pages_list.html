@@ -40,10 +40,10 @@
         {% endif %}
 
       {% endif %}
-      <div class="col-md-4 page-list-item page-card">
+      <div class="col-md-4 card page-list-item page-card">
       {% if page.image %}
-        <div class="span3 image">
-          <a style="background-image:url({{ page.image }})" href="{{ url }}">
+        <div class="span3">
+          <a style="background-image:url({{ page.image }})" href="{{ url }}" class="card-img-top">
           </a>
         </div>
         <div class="span8" style="margin-top:1rem;">
@@ -67,8 +67,8 @@
             <a class="read-more"  href="{{ url }}">Read More</a>
         </div>
       {% else %}
-      <div class="span3 image">
-          <img class="feed-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdmmJPKK_ynmtZgkngAz35PeqZueJv1RNIEzUZV6TNZV8ijqLe" alt="No Image Found" style="display: block;height: 136px;background-position: center center;background-size: cover;">
+      <div class="span3">
+          <img class="feed-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdmmJPKK_ynmtZgkngAz35PeqZueJv1RNIEzUZV6TNZV8ijqLe" alt="No Image Found" class="card-img-top">
       </div>
           <div class="span11" style="margin-top:1rem;">
           <h3 class="dataset-heading">

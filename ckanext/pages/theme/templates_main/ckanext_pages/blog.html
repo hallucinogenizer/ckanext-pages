@@ -2,7 +2,7 @@
 {% block bodytag %}{{ super() }} class="blog"{% endblock %}
 {% block subtitle %}{{ c.page.title }}{% endblock %}
 
-{% block primary_content %}
+{% block primary_content %}\
   <section class="module-content">
     {% if h.check_access('ckanext_pages_update') %}
       {% if h.ckan_version().split('.')[1] | int >= 9 %}

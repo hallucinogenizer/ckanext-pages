@@ -1,5 +1,10 @@
 {% extends 'ckanext_pages/blog_edit_base.html' %} 
 
+{% block styles %}
+  {{super()}}
+  <link rel="stylesheet" href="/css/pages_list.css">
+{% endblock %}
+
 {% block page_primary_action %}
   {% if h.check_access('ckanext_pages_update', {}) %}
     {% if h.ckan_version().split('.')[1] | int >= 9 %}
@@ -11,7 +16,31 @@
 {% endblock %}
 
 {% block primary_content_inner %}
+<script
+			  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+			  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+			  crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function(){
+    $("#blog-search").keyup(function(){
+      var filter = $(this).val().toLowerCase()
+
+      $(".page-card").filter(function(){
+        $(this).toggle($(this).text().toLowerCase().indexOf(filter) > -1)
+      })
+    })
+  })
+</script>
+  
   <h1 class="hide-heading">{{ _('Blog') }}</h1>
+  <form class="input-group hidden-sm hidden-xs">
+    <input type="text" placeholder="Search Blogs..." id='blog-search' class="form-control">
+    <div class="input-group-btn">
+      <button class="btn btn-deafult btn-lg">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </form>
   {% snippet 'ckanext_pages/snippets/pages_list.html', pages=c.page.items, type='blog' %}
   {{ c.page.pager() }}
 {% endblock %}
